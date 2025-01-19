@@ -1,0 +1,93 @@
+// .table-container {
+//     display: flex;
+//     position: relative;
+//     border: 1px solid #ddd;
+  
+//     .pinned-columns {
+//       position: sticky;
+//       left: 0;
+//       background: #fff;
+//       z-index: 2;
+//       border-right: 1px solid #ddd;
+  
+//       th, td {
+//         padding: 8px;
+//         text-align: left;
+//         border: 1px solid #ddd;
+//         min-width: 100px; // Adjust column width as needed
+//       }
+//     }
+  
+//     .scrollable-table {
+//       overflow-x: auto;
+//       width: 100%;
+  
+//       table {
+//         border-collapse: collapse;
+//         width: 100%;
+  
+//         th, td {
+//           padding: 8px;
+//           text-align: left;
+//           border: 1px solid #ddd;
+//           min-width: 100px; // Adjust column width as needed
+//         }
+  
+//         th {
+//           background-color: #f4f4f4;
+//           position: sticky;
+//           top: 0;
+//           z-index: 1;
+//         }
+//       }
+//     }
+//   }
+
+
+.table-container {
+    display: flex;
+    position: relative;
+    border: 1px solid #ddd;
+  }
+  
+  .pinned-columns {
+    position: sticky;
+    left: 0;
+    background: #fff;
+    z-index: 2;
+    border-right: 1px solid #ddd;
+    max-width: 50px;
+  }
+  
+  .pinned-columns th, .pinned-columns td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    min-width: 100px;
+  }
+  
+  .scrollable-table {
+    overflow-x: auto;
+    width: 100%;
+  }
+  
+  .scrollable-table table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .scrollable-table th, .scrollable-table td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    min-width: 100px; /* Adjust as needed */
+  }
+  
+  .scrollable-table th {
+    background-color: #f4f4f4;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  
