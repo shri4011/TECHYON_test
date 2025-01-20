@@ -11,9 +11,9 @@ import FilterAltSharpIcon from "@mui/icons-material/FilterAltSharp";
 function Home() {
   const [selectorValue, setSelectorValue] = useState("");
   const [allProjectsShowInGridform, setAllProjectsShowInGridform] =
-    useState(true);
+    useState(false);
 
-  const [allTasksShowInGridform, setAllTasksShowInGridform] = useState(true);
+  const [allTasksShowInGridform, setAllTasksShowInGridform] = useState(false);
 
   const [manu] = useState([
     {
@@ -144,7 +144,10 @@ function Home() {
               <Button
                 onClick={() => showAllProjectInGridForm(true)}
                 sx={{
-                  background: "#2E3B55",
+                  background: !allProjectsShowInGridform
+                    ? "#EBEBE4"
+                    : "#2E3B55",
+                  color: !allProjectsShowInGridform ? "#2E3B55" : "#ffffff",
                   height: "45px",
                   marginRight: "2px",
                 }}
@@ -154,7 +157,11 @@ function Home() {
                 />
               </Button>
               <Button
-                sx={{ background: "#2E3B55", height: "45px" }}
+                sx={{
+                  background: allProjectsShowInGridform ? "#EBEBE4" : "#2E3B55",
+                  color: allProjectsShowInGridform ? "#2E3B55" : "#ffffff",
+                  height: "45px",
+                }}
                 onClick={() => showAllProjectInGridForm(false)}
               >
                 <CalendarViewMonthIcon
@@ -164,7 +171,10 @@ function Home() {
               {!allProjectsShowInGridform && (
                 <Button
                   sx={{
-                    background: "#2E3B55",
+                    background: !allProjectsShowInGridform
+                      ? "#EBEBE4"
+                      : "#2E3B55",
+                    color: !allProjectsShowInGridform ? "#2E3B55" : "#ffffff",
                     height: "45px",
                     marginLeft: "2px",
                   }}
@@ -179,10 +189,10 @@ function Home() {
           </Grid2>
 
           <Grid2>
-            {allProjectsShowInGridform ? (
-              <ProjectsLayout list={allProjects} />
-            ) : (
+            {!allProjectsShowInGridform ? (
               <ProjectTable />
+            ) : (
+              <ProjectsLayout list={allProjects} />
             )}
           </Grid2>
 
@@ -213,7 +223,8 @@ function Home() {
               <Button
                 onClick={() => showAllTasksInGridForm(true)}
                 sx={{
-                  background: "#2E3B55",
+                  background: !allTasksShowInGridform ? "#EBEBE4" : "#2E3B55",
+                  color: !allTasksShowInGridform ? "#2E3B55" : "#ffffff",
                   height: "45px",
                   marginRight: "2px",
                 }}
@@ -223,17 +234,22 @@ function Home() {
                 />
               </Button>
               <Button
-                sx={{ background: "#2E3B55", height: "45px" }}
+                sx={{
+                  background: allTasksShowInGridform ? "#EBEBE4" : "#2E3B55",
+                  color: allTasksShowInGridform ? "#2E3B55" : "#ffffff",
+                  height: "45px",
+                }}
                 onClick={() => showAllTasksInGridForm(false)}
               >
                 <CalendarViewMonthIcon
                   sx={{ fontSize: "25px", color: "white" }}
                 />
               </Button>
-              {!allTasksShowInGridform && (
+              {allTasksShowInGridform && (
                 <Button
                   sx={{
-                    background: "#2E3B55",
+                    background: allTasksShowInGridform ? "#EBEBE4" : "#ffffff",
+                    color: allTasksShowInGridform ? "#ffffff" : "#2E3B55",
                     height: "45px",
                     marginLeft: "2px",
                   }}
@@ -248,9 +264,9 @@ function Home() {
           </Grid2>
           <Grid2>
             {allTasksShowInGridform ? (
-              <ProjectsLayout list={allTasks} />
-            ) : (
               <AllTasksTable />
+            ) : (
+              <ProjectsLayout list={allTasks} />
             )}
           </Grid2>
         </Grid2>

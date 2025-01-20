@@ -24,6 +24,7 @@ function ProjectCard({
   return (
     <>
       <Card
+        key={Math.random()}
         style={{
           margin: "7px",
           boxShadow: "0px 2px 5px rgba(0,0,0,0.1)",
@@ -83,6 +84,7 @@ function ProjectCard({
                 padding: "1px 18px",
                 borderRadius: "2px",
               }}
+              className="tag-status"
             >
               <Typography
                 variant="p"
@@ -101,7 +103,7 @@ function ProjectCard({
 function ProjectsLayout({ list }) {
   const renderCards = useMemo(() => {
     return list.map((status, index) => (
-      <Grid2 item size={{ xs: 12, md: 6, lg: 3 }} key={index}>
+      <Grid2 item size={{ xs: 12, md: 6, lg: 3 }} key={Math.random()}>
         <Grid2 display={"flex"} mb={2}>
           <Chip
             label={`${status.label} ${status.count}`}

@@ -18,7 +18,7 @@ export default function BasicSelect({ label, value, menuList, onChange }) {
           onChange={onChange}
         >
           {menuList.map(({ mValue, mTitle }) => (
-            <MenuItem value={mValue}>{mTitle}</MenuItem>
+            <MenuItem value={mValue} key={Math.random()}>{mTitle}</MenuItem>
           ))}
         </Select>
       </FormControl>

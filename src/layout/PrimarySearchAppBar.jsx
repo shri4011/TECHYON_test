@@ -163,7 +163,11 @@ export default function MiniDrawer() {
         <Divider />
         <List>
           {routes.map(({ title, component, path, icon }, index) => (
-            <ListItem key={title} disablePadding sx={{ display: "block" }}>
+            <ListItem
+              disablePadding
+              sx={{ display: "block" }}
+              key={Math.random()}
+            >
               <ListItemButton
                 onClick={() => navigateToPath(path)}
                 sx={[
