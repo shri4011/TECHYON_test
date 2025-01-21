@@ -21,7 +21,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import { Outlet, useNavigate } from "react-router-dom";
 import { routes } from "../routes";
 
-const drawerWidth = 240;
+const drawerWidth = 240;  
 
 const openedMixin = (theme) => ({
   width: drawerWidth,
